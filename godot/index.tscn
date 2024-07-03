@@ -1,5 +1,90 @@
-[gd_scene format=3 uid="uid://dfh54h5ers1n6"]
+[gd_scene load_steps=4 format=3 uid="uid://dfh54h5ers1n6"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="LabelSettings" uid="uid://m5q4y0662ode" path="res://menu_title_label_settings.tres" id="1_1r4nn"]
+[ext_resource type="PackedScene" uid="uid://7wk7rj5xenyg" path="res://levels/juego_simple.tscn" id="2_fq2d8"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="GDScript" id="GDScript_8ek5b"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_8ek5b")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -106.981
+offset_top = -92.2953
+offset_right = 405.019
+offset_bottom = 419.705
+scale = Vector2(2.62808, 1.67817)
+color = Color(0.270588, 0.141176, 0.0941176, 0.996078)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.400589
+anchor_top = 0.102258
+anchor_right = 0.561179
+anchor_bottom = 0.249143
+text = "truco"
+label_settings = ExtResource("1_1r4nn")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="button_container" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.335938
+anchor_top = 0.417567
+anchor_right = 0.618924
+anchor_bottom = 0.73589
+offset_left = -0.000488281
+offset_top = -0.0302887
+offset_right = -0.000488281
+offset_bottom = -5.58026
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="button_simple" type="MainMenuButton" parent="button_container"]
+scene_to_load = ExtResource("2_fq2d8")
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.166052
+offset_bottom = 1.14441e-05
+text = "simple"
+metadata/_edit_use_anchors_ = true
+
+[node name="button_parejas" type="Button" parent="button_container"]
+layout_mode = 2
+anchor_top = 0.234698
+anchor_right = 1.0
+anchor_bottom = 0.40075
+offset_top = -1.52588e-05
+offset_bottom = -2.28882e-05
+text = "parejas"
+metadata/_edit_use_anchors_ = true
+
+[node name="button_trios" type="Button" parent="button_container"]
+layout_mode = 2
+anchor_top = 0.472873
+anchor_right = 1.0
+anchor_bottom = 0.638925
+text = "trios"
+metadata/_edit_use_anchors_ = true

@@ -10,10 +10,7 @@
       systems = [ "x86_64-linux" ];
       perSystem = { config, self', pkgs, lib, system, ... }:
         let
-          runtimeDeps = with pkgs; [ 
-			udev alsa-lib vulkan-loader 
-			xorg.libX11 xorg.libXi xorg.libXrandr
-		  ];
+          runtimeDeps = with pkgs; [ ];
           buildDeps = with pkgs; [ pkg-config rustPlatform.bindgenHook mold clang ];
           devDeps = with pkgs; [ gdb rust-analyzer ];
 

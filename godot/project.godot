@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="truco"
+run/main_scene="res://index.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/show_image=false
+config/icon="res://res/pfp/4.svg"
+
+[display]
+
+window/size/viewport_height=674
+window/stretch/mode="viewport"
